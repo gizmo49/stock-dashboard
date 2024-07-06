@@ -51,7 +51,7 @@ const IntradayChart: React.FC<IntradayChartProps> = ({ symbol }) => {
                 if ('Note' in data || 'Information' in data) {
                     const hasDemoData = Boolean(data.Note || data.Information);
                     setIsDemoData(hasDemoData);
-                    data = hasDemoData ? intraDemoData : data;; 
+                    data = hasDemoData ? intraDemoData : data;;
                 }
 
                 const timeSeries = data['Time Series (5min)'];
@@ -110,7 +110,7 @@ const IntradayChart: React.FC<IntradayChartProps> = ({ symbol }) => {
     };
 
     return (
-        <div className="intraday-chart bg-white shadow-md rounded-lg p-4 m-2">
+        <div data-testid="intraday-chart" className="intraday-chart bg-white shadow-md rounded-lg p-4 m-2">
             {isDemoData && <i>Using Demo data</i>}
             {chartData ? <Line data={chartData} options={options} /> : 'Loading...'}
         </div>

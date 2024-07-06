@@ -50,7 +50,7 @@ const SectorPerformance: React.FC = () => {
     }, []);
 
     return (
-        <div className="sector-performance bg-white shadow-md rounded-lg p-4 m-2">
+        <div data-testid="sector-performance-chart" className="sector-performance bg-white shadow-md rounded-lg p-4 m-2">
             {isDemoData && <i>Using Demo data</i>}
             {chartData ? <Bar data={chartData} /> : 'Loading...'}
         </div>
